@@ -10,16 +10,22 @@ const GuitarSchema = new Schema({
         type: String,
         required: true
     },
+    body: {
+        electric: {
+            type: String,
+            enum: ["solid-body", "semi-hollow", "hollow"]
+        },
+        acoustic: {
+            type: String,
+            enum: ["dreadnought", "auditorium", "grand-auditorium", "classical"]
+        },
+        strings: Number
+    },
     year: Number,
     condition: {
         type: String,
         required: true,
         enum: ["mint", "good", "fair", "poor"]
-    },
-    type: {
-        type: String,
-        required: true,
-        enum: ["acoustic", "electric", "acoustic-electric"]
     }
 });
 

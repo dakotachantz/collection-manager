@@ -1,6 +1,6 @@
 # Build a collection manager
 
-Using Mongoose, build an app to store information about a collection.
+Built an app to store information about a collection using Mongoose.
 
 ---
 
