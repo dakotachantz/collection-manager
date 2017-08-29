@@ -29,7 +29,7 @@ app.use("/", homeRoutes);
 app.use("/guitars", detailRoutes);
 
 app.post("/newguitar", (req, res) => {
-    console.log(req.body);
+    console.log("req.body", req.body);
     let newGuitar = new Guitar(req.body);
     console.log(newGuitar);
     newGuitar.save()

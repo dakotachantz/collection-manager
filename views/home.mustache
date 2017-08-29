@@ -23,13 +23,13 @@
                 <label for="model">Model:</label>
                 <input type="text" name="model" placeholder="Ex: Stratocaster" required minlength="1">
                 <label for="body">Body:</label>
-                <select name="body" id="body" required>
-                    <optgroup label="Electric">
+                <select name="body" value="{{body}}" id="body" required>
+                    <optgroup name="electric" label="Electric">
                         <option value="solid-body">Solid-Body</option>
                         <option value="semi-hollow">Semi-Hollow</option>
                         <option value="hollow">Hollow</option>
                     </optgroup>
-                    <optgroup label="Acoustic">
+                    <optgroup name="acoustic" label="Acoustic">
                         <option value="dreadnought">Dreadnought</option>
                         <option value="auditorium">Auditorium</option>
                         <option value="grand-auditorium">Grand-Auditorium</option>
