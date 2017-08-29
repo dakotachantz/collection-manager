@@ -18,7 +18,7 @@
         {{#guitar}}
         <section>
             <h3>Edit your guitar entry below!</h3>
-            <form class="form" action="/updateguitar/{{_id}}" method="POST">
+            <form class="form" action="/guitar/updateguitar/{{_id}}" method="POST">
                 <label for="make">Make:</label>
                 <input type="text" name="make" value="{{make}}" placeholder="{{make}}" name="make">
                 <label for="model">Model:</label>
@@ -50,7 +50,7 @@
                 <input type="number" name="strings" value="{{strings}}" placeholder="Ex: 6" min="4" max="12">
                 <button class="button" type="submit">Update</button>
             </form>
-            <form class="delete-form" action="/deleteguitar/{{_id}}" method="post">
+            <form class="delete-form" action="/guitar/deleteguitar/{{_id}}" method="post">
                 <button id="delete" class="button" type="submit">Delete</button>
             </form>
         </section>
