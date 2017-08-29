@@ -18,15 +18,16 @@ const GuitarSchema = new Schema({
         acoustic: {
             type: String,
             enum: ["dreadnought", "auditorium", "grand-auditorium", "classical"]
-        },
-        strings: Number
+        }
     },
     year: Number,
     condition: {
         type: String,
         required: true,
         enum: ["mint", "good", "fair", "poor"]
-    }
+    },
+    strings: Number
+
 });
 
 module.exports = mongoose.model("Guitar", GuitarSchema);

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guitar Collection</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Guitar Collection</h1>
+        </header>
+        <section>
+            <h3>Add new guitars to the collection below!</h3>
+            <form class="form" action="/newguitar" method=POST>
+                <label for="make">Make:</label>
+                <input type="text" name="make" placeholder="Ex: Fender" required minlength="1">
+                <label for="model">Model:</label>
+                <input type="text" name="model" placeholder="Ex: Stratocaster" required minlength="1">
+                <label for="body">Body:</label>
+                <select name="body" id="body" required>
+                    <optgroup label="Electric">
+                        <option value="solid-body">Solid-Body</option>
+                        <option value="semi-hollow">Semi-Hollow</option>
+                        <option value="hollow">Hollow</option>
+                    </optgroup>
+                    <optgroup label="Acoustic">
+                        <option value="dreadnought">Dreadnought</option>
+                        <option value="auditorium">Auditorium</option>
+                        <option value="grand-auditorium">Grand-Auditorium</option>
+                        <option value="classical">Classical</option>
+                    </optgroup>
+                </select>
+                <label for="year">Year:</label>
+                <input type="number" name="year" placeholder="Ex: 1985" min="1900" max="2018">
+                <label for="condition">Condition:</label>
+                <select name="condition" id="condition" required>
+                    <option value="mint">Mint</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                    <option value="poor">Poor</option>
+                </select>
+                <label for="strings">Strings:</label>
+                <input type="number" name="strings" placeholder="Ex: 6" min="4" max="12">
+                <button class="button" type="submit">Add!</button>
+
+            </form>
+        </section>
+        <section class="grid">
+            {{#guitar}}
+            <div class="grid-item">
+                <div>
+                    <h4>Make: {{make}}</h4>
+                    <h4>Model: {{model}}</h4>
+                    <p>Condition: {{condition}}</p>
+                    {{#year}}
+                    <p>Year: {{.}}</p>
+                    {{/year}} {{#body}}
+                    <p>{{.}} </p>
+                    {{/body}}{{#strings}}
+                    <p># of Strings: {{strings}}</p>
+                    {{/strings}}
+                </div>
+                <a class="button" href="/guitar/{{_id}}">Edit</a>
+            </div>
+
+            {{/guitar}}
+            <span class="home top"><a class="fa fa-angle-up fa-2x" href="#topofpage"></a></span>
+        </section>
+    </main>
+</body>
+
+</html>

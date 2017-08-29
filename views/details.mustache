@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guitar Collection</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <span><a href="/"class="fa fa-home fa-2x"></a></span>
+        </header>
+        {{#guitar}}
+        <section>
+            <h3>Edit your guitar entry below!</h3>
+            <form class="form" action="/updateguitar/{{_id}}" method="POST">
+                <label for="make">Make:</label>
+                <input type="text" name="make" value="{{make}}" placeholder="{{make}}" name="make">
+                <label for="model">Model:</label>
+                <input type="text" name="model" value="{{model}}" placeholder="{{model}}" name="model">
+                <label for="body">Body:</label>
+                <select name="body" value="{{body}}" id="body">
+                    <optgroup label="Electric">
+                        <option value="solid-body">Solid-Body</option>
+                        <option value="semi-hollow">Semi-Hollow</option>
+                        <option value="hollow">Hollow</option>
+                    </optgroup>
+                    <optgroup label="Acoustic">
+                        <option value="dreadnought">Dreadnought</option>
+                        <option value="auditorium">Auditorium</option>
+                        <option value="grand-auditorium">Grand-Auditorium</option>
+                        <option value="classical">Classical</option>
+                    </optgroup>
+                </select>
+                <label for="year">Year:</label>
+                <input type="number" name="year" value="{{year}}" placeholder="Ex: 1965" min="1900" max="2018">
+                <label for="condition">Condition:</label>
+                <select name="condition" value="{{condition}}" id="condition">
+                    <option value="mint">Mint</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                    <option value="poor">Poor</option>
+                </select>
+                <label for="strings">Strings:</label>
+                <input type="number" name="strings" value="{{strings}}" placeholder="Ex: 6" min="4" max="12">
+                <button class="button" type="submit">Update</button>
+            </form>
+            <form class="delete-form" action="/deleteguitar/{{_id}}" method="post">
+                <button id="delete" class="button" type="submit">Delete</button>
+            </form>
+        </section>
+        <section class="grid">
+            <div class="grid-item details">
+                <h4>Make: {{make}}</h4>
+                <h4>Model: {{model}}</h4>
+                <p>Condition: {{condition}}</p>
+                {{#year}}
+                <p>Year: {{.}}</p>
+                {{/year}} {{#body.electric}}
+                <p>Type of Electric: {{body.electric}}</p>
+                {{/body.electric}} {{#body.acoustic}}
+                <p>Type of Acoustic: {{body.acoustic}}</p>
+                {{/body.acoustic}} {{#strings}}
+                <p># of Strings: {{strings}}</p>
+                {{/strings}}
+            </div>
+        </section>
+        {{/guitar}}
+    </main>
+    <script src="https://use.fontawesome.com/27763c6ae2.js"></script>
+</body>
+
+</html>

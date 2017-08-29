@@ -1,0 +1,137 @@
+* {
+    text-decoration: none;
+    /* color: white; */
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-image: url("../img/guitar.jpeg");
+    background-size: cover;
+    color: whitesmoke;
+}
+
+main {
+    background-color: rgba(24, 43, 43, .2);
+    height: 100vh;
+}
+
+h3 {
+    color: whitesmoke;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h1 {
+    color: whitesmoke;
+    margin: .5em;
+}
+
+.fa {
+    color: whitesmoke;
+    font-size: 3em;
+    margin: .5em;
+}
+
+.grid {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    width: 13.27em;
+    height: 11em;
+    background-color: rgba(24, 43, 43, .5);
+    margin: .8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: .5em;
+    border: 1px solid #243D3D;
+    border-radius: 10px;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+    margin: .2em;
+    padding: 0;
+    font-size: 1.3em;
+    color: whitesmoke;
+}
+
+p {
+    margin: 0.2em;
+    padding: 0;
+    font-size: 1.1em;
+    color: whitesmoke;
+}
+
+.button {
+    border: 1px solid #243D3D;
+    background-color: darkslategray;
+    color: white;
+    width: 30%;
+    text-align: center;
+    align-self: flex-end;
+}
+
+button {
+    font-size: 1em;
+    flex: 1;
+}
+
+#delete {
+    width: 2em;
+    text-align: center;
+    flex: .17;
+    margin: .2em auto;
+}
+
+.delete-form {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    color: whitesmoke;
+    font-size: 1.2em;
+    height: 100%;
+}
+
+.form {
+    width: 98%;
+    justify-content: space-around;
+    display: flex;
+    margin: 0 auto;
+}
+
+input, select {
+    flex: 1;
+    width: 3em;
+    margin: 0 .5em 0 0;
+    font-size: 1em;
+    height: 100%;
+}
+
+form {
+    display: flex;
+}
+
+.details {
+    height: 15em;
+    width: 30em;
+    align-self: center;
+    margin: 4em auto;
+    text-align: center;
+}
